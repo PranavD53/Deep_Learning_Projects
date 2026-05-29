@@ -6,5 +6,3 @@ numpy
 joblib
 matplotlib
 seaborn
-plotly
-terraform
