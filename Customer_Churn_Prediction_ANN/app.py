@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 import joblib
-
+from pathlib import Path
 # =========================
 # PAGE CONFIG
 # =========================
@@ -208,8 +208,13 @@ div[data-testid="stAlert"].st-emotion-cache-ztfqz8 {
 # =========================
 @st.cache_resource
 def load_artifacts():
-    model = tf.keras.models.load_model("churn_model.h5")
-    scaler = joblib.load("scaler.pkl")
+    BASE_DIR = Path(__file__).resolve().parent
+    model_path = BASE_DIR / "churn_model.h5"
+    scaler_path = BASE_DIR / "scaler.pkl"
+
+    model = tf.keras.models.load_model(model_path)
+    scaler = joblib.load(scaler_path)
+
     return model, scaler
 
 model, scaler = load_artifacts()

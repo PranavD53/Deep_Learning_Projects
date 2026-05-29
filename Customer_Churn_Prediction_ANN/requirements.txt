@@ -4,6 +4,7 @@ scikit-learn
 pandas
 numpy
 joblib
+pathlib
 matplotlib
 seaborn
 tensorflow
