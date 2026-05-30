@@ -408,7 +408,7 @@ def load_rnn_model():
 @st.cache_data
 def load_data():
     BASE_DIR = Path(__file__).resolve().parent
-    data_path = BASE_DIR / "Stock_Price_Forecasting_RNN" / "NIFTY50_all.csv"
+    data_path = BASE_DIR  / "NIFTY50_all.csv"
     df = pd.read_csv(data_path)
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.sort_values(["Symbol", "Date"])
