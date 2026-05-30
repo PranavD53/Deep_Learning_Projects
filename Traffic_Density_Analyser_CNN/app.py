@@ -6,6 +6,7 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 import time
 import base64
+from pathlib import Path
 from io import BytesIO
 
 # ---------------------------------------------------
@@ -360,7 +361,9 @@ header[data-testid="stHeader"] { background: transparent !important; }
 
 @st.cache_resource
 def load_cnn_model():
-    return load_model("traffic_sign_model.h5")
+    BASE_DIR = Path(__file__).resolve().parent
+    model_path = BASE_DIR / "traffic_sign_model.h5"
+    return load_model(model_path)
 
 try:
     model = load_cnn_model()
