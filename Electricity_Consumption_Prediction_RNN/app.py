@@ -5,6 +5,8 @@ import os
 import joblib
 from datetime import datetime, timedelta
 from pathlib import Path
+
+
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="PowerCast – Electricity Forecasting",
@@ -318,7 +320,7 @@ def run_forecast(region: str) -> pd.DataFrame:
     """Load model + scaler, build 24-hour rolling forecast."""
     from tensorflow.keras.models import load_model  # lazy import
     
-    BASE_DIR = Path(__file__).resolve().parent[1]  
+    BASE_DIR = Path(__file__).resolve().parent 
     MODEL_DIR = BASE_DIR / "models"
     DATA_DIR = BASE_DIR / "data"
     model = load_model(MODEL_DIR / f"{region}.h5", compile=False)
