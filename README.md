@@ -65,3 +65,14 @@ Built with TensorFlow, Keras, Streamlit, and Natural Language Processing techniq
 
 ---
 
+# Fake News Detection Platform
+
+This project uses an LSTM Deep Learning model to classify news articles as Fake or Real.
+The dataset contains thousands of real and fake news articles used for training and evaluation.
+A Streamlit web application allows users to paste news content and receive instant predictions.
+The project also compares ANN, SimpleRNN, and LSTM models, demonstrating the superior performance of LSTM for long-text classification tasks.
+
+**Link**: https://truth-lens-lstm.streamlit.app/
+
+---
+
