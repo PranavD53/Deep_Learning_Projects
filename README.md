@@ -21,7 +21,7 @@ A Streamlit web application is developed for real-time X-ray image classificatio
 
 ---
 
-# Smart Traffic Density Analyzer
+## Smart Traffic Density Analyzer
 
 A CNN-based traffic sign detection system built using the GTSRB dataset.
 Detects Stop Signs, Speed Limit Signs, and No Entry Signs from uploaded images.
@@ -31,3 +31,15 @@ Provides a traffic analytics dashboard to visualize detection statistics.
 **Link**: https://traffic-sign-detectionn.streamlit.app/
 
 ---
+
+## AI Stock Price Forecasting System
+
+A SimpleRNN-based deep learning project for predicting next-day stock prices using NIFTY-50 historical stock data.
+Built with TensorFlow, Scikit-Learn, and Streamlit.
+Users can select any NIFTY-50 stock and view future price predictions.
+The application also provides stock trends, statistics, and buy/sell signals.
+
+**Link**: https://neural-trade.streamlit.app/
+
+---
+
