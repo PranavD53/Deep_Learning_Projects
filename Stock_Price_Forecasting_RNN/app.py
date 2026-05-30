@@ -407,7 +407,7 @@ def load_rnn_model():
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("NIFTY50_all.csv")
+    pd.read_csv("Stock_Price_Forecasting_RNN/NIFTY50_all.csv")
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.sort_values(["Symbol", "Date"])
     return df
