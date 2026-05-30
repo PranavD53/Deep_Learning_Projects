@@ -4,8 +4,6 @@ import numpy as np
 import os
 import joblib
 from datetime import datetime, timedelta
-from pathlib import Path
-
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -307,26 +305,28 @@ html, body, [data-testid="stAppViewContainer"],
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+# ── Resolve paths relative to this script, not the CWD ───────────────────────
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR  = os.path.join(BASE_DIR, "models")
+DATA_DIR    = os.path.join(BASE_DIR, "data")
+
 def load_regions() -> list[str]:
-    if not os.path.isdir("models"):
+    if not os.path.isdir(MODELS_DIR):
         return ["Region_A", "Region_B", "Region_C"]   # demo fallback
     return sorted([
         f.replace(".h5", "")
-        for f in os.listdir("models")
+        for f in os.listdir(MODELS_DIR)
         if f.endswith(".h5")
     ])
 
 def run_forecast(region: str) -> pd.DataFrame:
     """Load model + scaler, build 24-hour rolling forecast."""
     from tensorflow.keras.models import load_model  # lazy import
-    
-    BASE_DIR = Path(__file__).resolve().parent 
-    MODEL_DIR = BASE_DIR / "models"
-    DATA_DIR = BASE_DIR / "data"
-    model = load_model(MODEL_DIR / f"{region}.h5", compile=False)
-    scaler = joblib.load(MODEL_DIR / f"{region}_scaler.pkl")
 
-    df = pd.read_csv(DATA_DIR / f"{region}.csv")
+    model = load_model(os.path.join(MODELS_DIR, f"{region}.h5"), compile=False)
+    scaler = joblib.load(os.path.join(MODELS_DIR, f"{region}_scaler.pkl"))
+
+    df = pd.read_csv(os.path.join(DATA_DIR, f"{region}.csv"))
     df.columns = ["Datetime", "Load"]
     scaled = scaler.transform(df[["Load"]])
     seq = scaled[-24:].flatten()
@@ -368,7 +368,7 @@ def demo_forecast() -> pd.DataFrame:
 
 # ── App state ─────────────────────────────────────────────────────────────────
 regions = load_regions()
-DEMO_MODE = not os.path.isdir("models")
+DEMO_MODE = not os.path.isdir(MODELS_DIR)
 
 # ── Hero ──────────────────────────────────────────────────────────────────────
 st.markdown("""
