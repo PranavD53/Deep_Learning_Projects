@@ -53,3 +53,15 @@ Includes preprocessing, training, forecasting, and Streamlit deployment.
 **Link**: https://power-cast.streamlit.app/
 
 ---
+
+## AI Resume Ranking System
+
+An AI-powered resume screening application that automatically classifies resumes into job roles using NLP and LSTM networks.
+The system performs text cleaning, tokenization, embedding, and deep learning-based classification on resume content.
+Users can upload PDF, DOCX, or TXT resumes and receive ranked job-role predictions with confidence scores.
+Built with TensorFlow, Keras, Streamlit, and Natural Language Processing techniques for automated HR screening.
+
+**Link**: https://resume-iq-lstm.streamlit.app/
+
+---
+
