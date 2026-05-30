@@ -20,3 +20,14 @@ A Streamlit web application is developed for real-time X-ray image classificatio
 **Link**: https://pneumo-scan.streamlit.app/
 
 ---
+
+# Smart Traffic Density Analyzer
+
+A CNN-based traffic sign detection system built using the GTSRB dataset.
+Detects Stop Signs, Speed Limit Signs, and No Entry Signs from uploaded images.
+Includes a Streamlit web application for real-time predictions and confidence scores.
+Provides a traffic analytics dashboard to visualize detection statistics.
+
+**Link**: https://traffic-sign-detectionn.streamlit.app/
+
+---
