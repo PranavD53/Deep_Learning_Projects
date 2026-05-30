@@ -43,3 +43,13 @@ The application also provides stock trends, statistics, and buy/sell signals.
 
 ---
 
+## Electricity Consumption Forecasting
+
+A SimpleRNN-based deep learning project for forecasting electricity demand.
+Uses historical hourly energy consumption data from Kaggle.
+Predicts the next 24 hours of electricity usage.
+Includes preprocessing, training, forecasting, and Streamlit deployment.
+
+**Link**: https://power-cast.streamlit.app/
+
+---
