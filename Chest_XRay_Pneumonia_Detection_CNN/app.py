@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import time
-
+from pathlib import Path
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="PneumoScan AI",
@@ -359,7 +359,9 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        return tf.keras.models.load_model("pneumonia_model.h5")
+        BASE_DIR = Path(__file__).resolve().parent
+        model_path = BASE_DIR / "pneumonia_model.h5"
+        return tf.keras.models.load_model(model_path)
     except Exception as e:
         return None
 
