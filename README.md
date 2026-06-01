@@ -65,7 +65,7 @@ Built with TensorFlow, Keras, Streamlit, and Natural Language Processing techniq
 
 ---
 
-# Fake News Detection Platform
+## Fake News Detection Platform
 
 This project uses an LSTM Deep Learning model to classify news articles as Fake or Real.
 The dataset contains thousands of real and fake news articles used for training and evaluation.
@@ -76,3 +76,8 @@ The project also compares ANN, SimpleRNN, and LSTM models, demonstrating the sup
 
 ---
 
+## Smart Video Surveillance System
+
+A deep learning-based surveillance system that detects and classifies suspicious activities from CCTV videos using CNN and LSTM models. The CNN extracts spatial features from video frames, while the LSTM captures temporal patterns across frame sequences. The system identifies 14 activity categories, including crimes such as robbery, assault, shoplifting, and vandalism. Built with TensorFlow and Streamlit, it provides real-time video analysis through an interactive web interface. The project uses the UCF Crime Dataset for training and evaluation.
+
+**Link**: https://sentinel-ai-dl.streamlit.app/
